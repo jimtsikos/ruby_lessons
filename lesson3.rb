@@ -1,14 +1,38 @@
 # Simple Calculator
 
+def multiply(first_number, second_number)
+  first_number.to_f * second_number.to_f
+end
+
+def divide(first_number, second_number)
+  first_number.to_f / second_number.to_f
+end
+
+def subtract(first_number, second_number)
+  second_number.to_f - first_number.to_f
+end
+
+def mod(first_number, second_number)
+  first_number.to_f % second_number.to_f
+end
+
 puts "Simple calculator"
 20.times { print "-" }
 puts
-puts "Please enter your first number"
+puts "What do you want to do? 1) multiply 2) divide 3) subtract 4) find remainder"
+prompt = gets.chomp
+puts "Enter in your first number"
 first_number = gets.chomp
-puts "Please enter your second number"
+puts "Enter in your second number"
 second_number = gets.chomp
-puts "The first number multiplied by the second number is: #{first_number.to_f * second_number.to_f}"
-puts "The first number divided by the second number is: #{first_number.to_f / second_number.to_f}"
-puts "The first number subtracted from the second number is: #{second_number.to_f - first_number.to_f}"
-puts "The first number added to the second number is: #{second_number.to_f + first_number.to_f}"
-puts "The first number mod the second number is: #{first_number.to_f % second_number.to_f}"
+if prompt == '1'
+  puts multiply(first_number, second_number)
+elsif prompt == '2'
+  puts divide(first_number, second_number)
+elsif prompt == '3'
+  puts subtract(first_number, second_number)
+elsif prompt == '4'
+  puts mod(first_number, second_number)
+else
+  puts "You have made an invalid choice"
+end
